@@ -41,7 +41,11 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-display {
+h1,
+h2,
+h3,
+h4,
+.font-display {
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -83,9 +87,10 @@ h1, h2, h3, h4, .font-display {
   font-size: 0.72rem;
   font-weight: 500;
   padding: 0.85rem 1.75rem;
-  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px solid var(--gold);
 }
+
 .btn-gold:hover {
   background: transparent;
   color: var(--gold);
@@ -101,11 +106,12 @@ h1, h2, h3, h4, .font-display {
   font-weight: 500;
   padding: 0.85rem 1.75rem;
   border: 1px solid var(--border);
-  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .btn-outline:hover {
   border-color: var(--gold);
-  background: rgba(200,163,90,0.08);
+  background: rgba(200, 163, 90, 0.08);
 }
 
 .btn-whatsapp {
@@ -120,34 +126,117 @@ h1, h2, h3, h4, .font-display {
   transition: all 0.3s ease;
   border: 1px solid #1f7a52;
 }
+
 .btn-whatsapp:hover {
   background: #17603f;
 }
 
-.product-card { transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease; }
+.product-card {
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .product-grid:has(.product-card:hover) .product-card:not(:hover) { filter: blur(1.25px); opacity: 0.72; }
-  .product-card:hover { position: relative; z-index: 1; transform: scale(1.01); }
+  .product-grid:has(.product-card:hover) .product-card:not(:hover) {
+    filter: blur(1.25px);
+    opacity: 0.72;
+  }
+
+  .product-card:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.01);
+  }
 }
 
-.review-ticker { overflow: hidden; }
-.review-ticker-track { display: flex; width: max-content; gap: 1rem; animation: reviewTicker 70s linear infinite; }
-.review-ticker-card { width: min(290px, 75vw); min-height: 92px; flex: 0 0 auto; border: 1px solid var(--border); padding: 0.8rem 1rem; background: var(--bg-elevated); }
-@keyframes reviewTicker { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
-@media (prefers-reduced-motion: reduce) { .review-ticker-track { animation: none; } }
+/* Customer review ticker */
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.review-ticker {
+  overflow: hidden;
+  width: 100%;
 }
-.animate-fade { animation: fadeIn 1.1s ease both; }
 
-@keyframes riseIn {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+.review-ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding-left: 100%;
+  animation: reviewTicker 45s linear infinite;
+  will-change: transform;
 }
-.animate-rise { animation: riseIn 0.8s cubic-bezier(0.22,1,0.36,1) both; }
+
+.review-ticker-card {
+  width: min(290px, 75vw);
+  min-height: 92px;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+  background: var(--bg-elevated);
+}
+
+@keyframes reviewTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .review-ticker-track {
+    gap: 0.75rem;
+    animation-duration: 35s;
+  }
+
+  .review-ticker-card {
+    width: 240px;
+    min-height: 88px;
+    padding: 0.7rem 0.85rem;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .review-ticker-track {
+    animation: none;
+    padding-left: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1.1s ease both;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: riseIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
