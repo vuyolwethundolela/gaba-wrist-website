@@ -153,24 +153,25 @@ h4,
 .review-ticker {
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
 .review-ticker-track {
   display: flex;
   width: max-content;
   gap: 1rem;
-  padding-left: 100%;
   animation: reviewTicker 45s linear infinite;
   will-change: transform;
 }
 
 .review-ticker-card {
-  width: min(290px, 75vw);
+  width: 290px;
   min-height: 92px;
-  flex: 0 0 auto;
+  flex: 0 0 290px;
   border: 1px solid var(--border);
   padding: 0.8rem 1rem;
   background: var(--bg-elevated);
+  box-sizing: border-box;
 }
 
 @keyframes reviewTicker {
@@ -179,18 +180,24 @@ h4,
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 640px) {
+  .review-ticker {
+    overflow: hidden;
+    width: 100%;
+  }
+
   .review-ticker-track {
     gap: 0.75rem;
-    animation-duration: 35s;
+    animation-duration: 45s;
   }
 
   .review-ticker-card {
     width: 240px;
+    flex-basis: 240px;
     min-height: 88px;
     padding: 0.7rem 0.85rem;
   }
@@ -199,7 +206,6 @@ h4,
 @media (prefers-reduced-motion: reduce) {
   .review-ticker-track {
     animation: none;
-    padding-left: 0;
   }
 }
 
