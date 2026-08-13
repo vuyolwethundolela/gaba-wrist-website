@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #08080a;
+  --bg-elevated: #151417;
+  --bg-elevated-2: #1d1c20;
+  --text: #f8f6f1;
+  --text-muted: #b7b2a6;
+  --border: rgba(200,163,90,0.25);
+  --gold: #c8a35a;
+  --gold-bright: #e4c682;
+}
+
+html.light {
+  --bg: #f8f6f1;
+  --bg-elevated: #ffffff;
+  --bg-elevated-2: #f1eee6;
+  --text: #16151a;
+  --text-muted: #55524a;
+  --border: rgba(179,135,46,0.35);
+  --gold: #9c7526;
+  --gold-bright: #b3872e;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--gold);
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.gold-border {
+  border: 1px solid var(--border);
+}
+
+.surface {
+  background-color: var(--bg-elevated);
+}
+
+.surface-2 {
+  background-color: var(--bg-elevated-2);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #0a0a0a;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+  border: 1px solid var(--gold);
+}
+.btn-gold:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid var(--border);
+  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  background: rgba(200,163,90,0.08);
+}
+
+.btn-whatsapp {
+  background: #1f7a52;
+  color: #f8f6f1;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  transition: all 0.3s ease;
+  border: 1px solid #1f7a52;
+}
+.btn-whatsapp:hover {
+  background: #17603f;
+}
+
+.product-card { transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .product-grid:has(.product-card:hover) .product-card:not(:hover) { filter: blur(1.25px); opacity: 0.72; }
+  .product-card:hover { position: relative; z-index: 1; transform: scale(1.01); }
+}
+
+.review-ticker { overflow: hidden; }
+.review-ticker-track { display: flex; width: max-content; gap: 1rem; animation: reviewTicker 70s linear infinite; }
+.review-ticker-card { width: min(290px, 75vw); min-height: 92px; flex: 0 0 auto; border: 1px solid var(--border); padding: 0.8rem 1rem; background: var(--bg-elevated); }
+@keyframes reviewTicker { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
+@media (prefers-reduced-motion: reduce) { .review-ticker-track { animation: none; } }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade { animation: fadeIn 1.1s ease both; }
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: riseIn 0.8s cubic-bezier(0.22,1,0.36,1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
