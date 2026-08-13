@@ -7,17 +7,51 @@ export function EnquiryProvider({ children }) {
   const [enquiry, setEnquiry] = useState(null)
   const [selectedProducts, setSelectedProducts] = useState([])
 
-  const toggleProduct = (product) => setSelectedProducts((items) => items.some((item) => item.id === product.id) ? items.filter((item) => item.id !== product.id) : [...items, product])
+  const toggleProduct = (product) =>
+    setSelectedProducts((items) =>
+      items.some((item) => item.id === product.id)
+        ? items.filter((item) => item.id !== product.id)
+        : [...items, product]
+    )
+
+  const removeSelectedProduct = (productId) =>
+    setSelectedProducts((items) =>
+      items.filter((item) => item.id !== productId)
+    )
+
+  const clearSelectedProducts = () => {
+    setSelectedProducts([])
+    setEnquiry(null)
+  }
+
   const openEnquiry = (product) => {
-    const products = selectedProducts.some((item) => item.id === product.id) ? selectedProducts : [...selectedProducts, product]
+    const products = selectedProducts.some((item) => item.id === product.id)
+      ? selectedProducts
+      : [...selectedProducts, product]
+
     setEnquiry({ type: 'product', products })
   }
-  const openSelectedEnquiry = () => selectedProducts.length && setEnquiry({ type: 'product', products: selectedProducts })
+
+  const openSelectedEnquiry = () =>
+    selectedProducts.length &&
+    setEnquiry({ type: 'product', products: selectedProducts })
+
   const openGeneralEnquiry = () => setEnquiry({ type: 'general' })
+
   const closeEnquiry = () => setEnquiry(null)
 
   return (
-    <EnquiryContext.Provider value={{ openEnquiry, openGeneralEnquiry, selectedProducts, toggleProduct, openSelectedEnquiry }}>
+    <EnquiryContext.Provider
+      value={{
+        openEnquiry,
+        openGeneralEnquiry,
+        selectedProducts,
+        toggleProduct,
+        removeSelectedProduct,
+        clearSelectedProducts,
+        openSelectedEnquiry,
+      }}
+    >
       {children}
       <EnquiryModal enquiry={enquiry} onClose={closeEnquiry} />
     </EnquiryContext.Provider>
@@ -26,6 +60,10 @@ export function EnquiryProvider({ children }) {
 
 export function useEnquiry() {
   const ctx = useContext(EnquiryContext)
-  if (!ctx) throw new Error('useEnquiry must be used within an EnquiryProvider')
+
+  if (!ctx) {
+    throw new Error('useEnquiry must be used within an EnquiryProvider')
+  }
+
   return ctx
 }

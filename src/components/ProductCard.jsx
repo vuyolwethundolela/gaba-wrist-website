@@ -15,7 +15,10 @@ export default function ProductCard({ product, onView }) {
   const isSelected = selectedProducts.some((item) => item.id === product.id)
 
   return (
-    <div className="group product-card flex flex-col gold-border transition-shadow duration-500 hover:shadow-goldlg" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div
+      className="group product-card flex flex-col gold-border transition-shadow duration-500 hover:shadow-goldlg"
+      style={{ backgroundColor: 'var(--bg-elevated)' }}
+    >
       <button
         type="button"
         onClick={() => onView(product)}
@@ -27,24 +30,63 @@ export default function ProductCard({ product, onView }) {
           alt={product.name}
           className="h-full w-full object-cover transition-transform duration-700 ease-lux group-hover:scale-105"
         />
-        <span className="absolute right-3 top-3 border px-2 py-1 text-[10px] tracking-widest2" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)', color: 'var(--gold)' }}>
+
+        <span
+          className="absolute right-2 top-2 border px-1.5 py-0.5 text-[9px] tracking-widest2 sm:right-3 sm:top-3 sm:px-2 sm:py-1 sm:text-[10px]"
+          style={{
+            borderColor: 'var(--border)',
+            backgroundColor: 'var(--bg)',
+            color: 'var(--gold)',
+          }}
+        >
           {product.reference}
         </span>
       </button>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-xl leading-snug">{product.name}</h3>
-        <p className="mt-2 line-clamp-3 flex-1 text-sm text-muted">{product.description}</p>
-        {price && <p className="mt-3 text-sm tracking-wide" style={{ color: 'var(--gold)' }}>{price}</p>}
+      <div className="flex flex-1 flex-col p-3 sm:p-5">
+        <h3 className="font-display text-lg leading-snug sm:text-xl">
+          {product.name}
+        </h3>
 
-        <button type="button" onClick={() => toggleProduct(product)} className="mt-5 w-full border px-3 py-2 text-[10px] uppercase tracking-widest2 transition-colors" style={{ borderColor: isSelected ? 'var(--gold)' : 'var(--border)', color: isSelected ? 'var(--gold)' : 'var(--text-muted)' }}>
+        <p className="mt-1.5 line-clamp-3 flex-1 text-xs text-muted sm:mt-2 sm:text-sm">
+          {product.description}
+        </p>
+
+        {price && (
+          <p
+            className="mt-2 text-xs tracking-wide sm:mt-3 sm:text-sm"
+            style={{ color: 'var(--gold)' }}
+          >
+            {price}
+          </p>
+        )}
+
+        <button
+          type="button"
+          onClick={() => toggleProduct(product)}
+          className="mt-3 w-full border px-2 py-1.5 text-[9px] uppercase tracking-widest2 transition-colors sm:mt-5 sm:px-3 sm:py-2 sm:text-[10px]"
+          style={{
+            borderColor: isSelected ? 'var(--gold)' : 'var(--border)',
+            color: isSelected ? 'var(--gold)' : 'var(--text-muted)',
+          }}
+        >
           {isSelected ? 'Selected for enquiry ✓' : 'Add to enquiry'}
         </button>
-        <div className="mt-2 flex gap-2">
-          <button type="button" onClick={() => onView(product)} className="btn-outline flex-1 text-center">
+
+        <div className="mt-1.5 flex gap-1.5 sm:mt-2 sm:gap-2">
+          <button
+            type="button"
+            onClick={() => onView(product)}
+            className="btn-outline flex-1 px-2 py-1.5 text-[9px] text-center sm:px-3 sm:py-2 sm:text-[10px]"
+          >
             View Details
           </button>
-          <button type="button" onClick={() => openEnquiry(product)} className="btn-gold flex-1 text-center">
+
+          <button
+            type="button"
+            onClick={() => openEnquiry(product)}
+            className="btn-gold flex-1 px-2 py-1.5 text-[9px] text-center sm:px-3 sm:py-2 sm:text-[10px]"
+          >
             Enquire Now
           </button>
         </div>
