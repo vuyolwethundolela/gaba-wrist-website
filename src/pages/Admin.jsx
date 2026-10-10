@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { CATEGORIES, products as staticProducts } from '../data/products.js'
 import { clearProductsCache } from '../data/useProducts.js'
+  import Analytics from './Analytics.jsx'
 
 const url = import.meta.env.VITE_SUPABASE_URL
 const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
