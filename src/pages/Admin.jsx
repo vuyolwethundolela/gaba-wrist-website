@@ -141,6 +141,7 @@ function Login({ onLogin }) {
   }
 
   return (
+      <Analytics api={api} />
     <form onSubmit={submit} className="gold-border mx-auto max-w-md p-6" style={{ backgroundColor: 'var(--bg-elevated)' }}>
       <h1 className="font-display mb-6 text-3xl">Admin login</h1>
       <label style={labelStyle}>Email</label>
