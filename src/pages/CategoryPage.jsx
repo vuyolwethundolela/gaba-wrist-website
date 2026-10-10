@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getProductsByCategory } from '../data/products.js'
+import { useProductsByCategory } from '../data/useProducts.js'
 import ProductGrid from '../components/ProductGrid.jsx'
 import ProductModal from '../components/ProductModal.jsx'
 
 export default function CategoryPage({ category, title, intro }) {
   const [viewProduct, setViewProduct] = useState(null)
   const navigate = useNavigate()
-  const products = getProductsByCategory(category)
+  const products = useProductsByCategory(category)
 
   const handleBack = () => {
     navigate(-1)
