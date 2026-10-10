@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 import { EnquiryProvider } from './context/EnquiryContext.jsx'
 import ReviewSection from './components/ReviewSection.jsx'
 import PublicReviewTicker from './components/PublicReviewTicker.jsx'
+import { trackEvent } from './data/track.js'
 
 import Home from './pages/Home.jsx'
 import MensWatches from './pages/MensWatches.jsx'
@@ -20,6 +21,10 @@ import NotFound from './pages/NotFound.jsx'
 export default function App() {
   const { pathname } = useLocation()
   const isAdmin = pathname.startsWith('/admin')
+
+  useEffect(() => {
+    if (!isAdmin) trackEvent('page_view', { path: pathname })
+  }, [pathname, isAdmin])
 
   return (
     <EnquiryProvider>
