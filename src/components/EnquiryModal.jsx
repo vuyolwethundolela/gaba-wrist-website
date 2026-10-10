@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { buildGeneralEnquiryMessage, buildProductEnquiryMessage, buildWhatsAppUrl } from '../data/business.js'
+import { trackEvent } from '../data/track.js'
 
 const blankProductForm = { name: '', area: '', fulfillment: '', message: '' }
 const blankGeneralForm = { name: '', enquiryType: '' }
@@ -20,6 +21,11 @@ export default function EnquiryModal({ enquiry, onClose }) {
     else if (!form.enquiryType) next.enquiryType = 'Please choose what you are enquiring about.'
     setErrors(next); if (Object.keys(next).length) return
     const message = isProduct ? buildProductEnquiryMessage(enquiry.products, form) : buildGeneralEnquiryMessage(form)
+    if (isProduct) {
+      enquiry.products.forEach((product) =>
+        trackEvent('enquiry', { product_id: product.id, product_name: product.name, category: product.category })
+      )
+    }
     window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer'); onClose()
   }
   return <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 px-4 py-8 animate-fade" role="dialog" aria-modal="true" onClick={onClose}>
