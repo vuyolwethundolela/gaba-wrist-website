@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { CATEGORIES, products as staticProducts } from '../data/products.js'
 import { clearProductsCache } from '../data/useProducts.js'
-  import Analytics from './Analytics.jsx'
+import Analytics from './Analytics.jsx'
 
 const url = import.meta.env.VITE_SUPABASE_URL
 const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -141,7 +141,6 @@ function Login({ onLogin }) {
   }
 
   return (
-      <Analytics api={api} />
     <form onSubmit={submit} className="gold-border mx-auto max-w-md p-6" style={{ backgroundColor: 'var(--bg-elevated)' }}>
       <h1 className="font-display mb-6 text-3xl">Admin login</h1>
       <label style={labelStyle}>Email</label>
@@ -282,6 +281,8 @@ function Dashboard({ session, onLogout }) {
         </div>
         <button type="button" style={buttonStyle} onClick={onLogout}>Log out</button>
       </div>
+
+      <Analytics api={api} />
 
       <form onSubmit={submit} className="gold-border mb-12 grid gap-4 p-5 md:p-6" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <h2 className="font-display text-2xl">{editingId ? `Edit ${editingId}` : 'Add a new item'}</h2>
