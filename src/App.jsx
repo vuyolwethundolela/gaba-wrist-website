@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
@@ -14,9 +14,13 @@ import UnisexWatches from './pages/UnisexWatches.jsx'
 import Jewellery from './pages/Jewellery.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import Admin from './pages/Admin.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
+  const { pathname } = useLocation()
+  const isAdmin = pathname.startsWith('/admin')
+
   return (
     <EnquiryProvider>
       <ScrollToTop />
@@ -31,11 +35,12 @@ export default function App() {
             <Route path="/jewellery" element={<Jewellery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        <ReviewSection />
-        <PublicReviewTicker />
+        {!isAdmin && <ReviewSection />}
+        {!isAdmin && <PublicReviewTicker />}
         <Footer />
       </div>
     </EnquiryProvider>
