@@ -64,3 +64,4 @@ Do one small real purchase yourself and confirm the order shows `paid`.
 - [ ] `products` table: only your admin account can insert/update/delete (Row Level Security)
 - [ ] No merchant details in any file, `.env`, or `VITE_` variable
 - [ ] Sandbox tested end-to-end before `PAYFAST_SANDBOX=false`
+- [ ] Preview test
