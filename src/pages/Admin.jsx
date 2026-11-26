@@ -12,6 +12,9 @@ const PREFIX = {
   [CATEGORIES.LADIES]: 'L',
   [CATEGORIES.UNISEX]: 'U',
   [CATEGORIES.JEWELLERY]: 'J',
+  [CATEGORIES.EYEWEAR]: 'E',
+  [CATEGORIES.FRAGRANCE_MEN]: 'FM',
+  [CATEGORIES.FRAGRANCE_WOMEN]: 'FW',
 }
 const categoryList = Object.values(CATEGORIES)
 const emptyForm = { category: CATEGORIES.MENS, name: '', description: '', price: '', is_active: true }
