@@ -70,7 +70,7 @@ export default function ProductCard({ product, onView }) {
             color: isSelected ? 'var(--gold)' : 'var(--text-muted)',
           }}
         >
-          {isSelected ? 'Selected for enquiry ✓' : 'Add to enquiry'}
+          {isSelected ? 'In cart ✓' : 'Add to cart'}
         </button>
 
         <div className="mt-1.5 flex gap-1.5 sm:mt-2 sm:gap-2">

@@ -8,6 +8,8 @@ const LINKS = [
   { to: '/ladies-watches', label: "Ladies' Watches" },
   { to: '/unisex-watches', label: 'Unisex Watches' },
   { to: '/jewellery', label: 'Jewellery' },
+  { to: '/eyewear', label: 'Eyewear' },
+  { to: '/fragrance', label: 'Fragrance' },
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact Us' },
 ]
@@ -49,7 +51,7 @@ export default function Navbar() {
           </span>
         </NavLink>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex">
           {LINKS.map((l) => (
             <NavLink key={l.to} to={l.to} className={linkClass} end={l.to === '/'}>
               {l.label}
@@ -61,7 +63,7 @@ export default function Navbar() {
           <ThemeToggle className="hidden sm:inline-flex" />
           <button
             type="button"
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
+            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 xl:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
@@ -84,7 +86,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden transition-all duration-500 ease-lux lg:hidden ${open ? 'max-h-[520px]' : 'max-h-0'}`}
+        className={`overflow-hidden transition-all duration-500 ease-lux xl:hidden ${open ? 'max-h-[640px]' : 'max-h-0'}`}
         style={{ borderTop: open ? '1px solid var(--border)' : 'none' }}
       >
         <nav className="flex flex-col gap-1 px-5 py-4">

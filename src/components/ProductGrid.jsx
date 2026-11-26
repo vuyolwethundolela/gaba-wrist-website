@@ -14,9 +14,9 @@ export default function ProductGrid({ products, onView }) {
   if (!products || products.length === 0) {
     return (
       <div className="gold-border flex flex-col items-center justify-center px-6 py-24 text-center">
-        <p className="font-display text-2xl">No products in this collection yet</p>
+        <p className="font-display text-2xl">Items coming soon</p>
         <p className="mt-2 text-sm text-muted">
-          Please check back soon, or enquire on WhatsApp for availability.
+          New pieces are on their way. Check back soon, or message us on WhatsApp to ask about availability.
         </p>
       </div>
     )
@@ -37,7 +37,7 @@ export default function ProductGrid({ products, onView }) {
               <span style={{ color: 'var(--gold)' }}>
                 {selectedProducts.length}
               </span>{' '}
-              item{selectedProducts.length > 1 ? 's' : ''} selected for enquiry
+              item{selectedProducts.length > 1 ? 's' : ''} in your cart
             </p>
 
             <button
@@ -83,7 +83,7 @@ export default function ProductGrid({ products, onView }) {
               href={buildProductEmailHref(selectedProducts)}
               className="btn-outline w-full text-center text-xs sm:w-auto"
             >
-              Email selected
+              Email cart
             </a>
 
             <button
@@ -91,7 +91,7 @@ export default function ProductGrid({ products, onView }) {
               onClick={openSelectedEnquiry}
               className="btn-gold w-full text-center text-xs sm:w-auto"
             >
-              Enquire about selected
+              Order on WhatsApp
             </button>
           </div>
         </div>

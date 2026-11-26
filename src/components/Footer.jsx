@@ -10,6 +10,8 @@ const LINKS = [
   { to: '/ladies-watches', label: "Ladies' Watches" },
   { to: '/unisex-watches', label: 'Unisex Watches' },
   { to: '/jewellery', label: 'Jewellery' },
+  { to: '/eyewear', label: 'Eyewear' },
+  { to: '/fragrance', label: 'Fragrance' },
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact Us' },
 ]
