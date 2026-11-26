@@ -1,0 +1,222 @@
+{
+  "GW-M001": {
+    "name": "CURREN Luxury Chronograph Watch",
+    "price": "699"
+  },
+  "GW-M002": {
+    "name": "DENVOSI Octagonal Minimalist Watch",
+    "price": "599"
+  },
+  "GW-M003": {
+    "name": "CURREN Multifunction Chronograph Watch",
+    "price": "699"
+  },
+  "GW-M004": {
+    "name": "SKMEI World Time Sport Watch",
+    "price": "550"
+  },
+  "GW-M005": {
+    "name": "LIGE Black Steel Business Chronograph",
+    "price": "1,250"
+  },
+  "GW-M006": {
+    "name": "REWARD Silicone Strap Business Watch",
+    "price": "750"
+  },
+  "GW-L001": {
+    "name": "POEDAGAR Rhinestone Ladies' Watch",
+    "price": "650"
+  },
+  "GW-L002": {
+    "name": "CURREN Blanche Ladies' Watch",
+    "price": "450"
+  },
+  "GW-L003": {
+    "name": "Golden Stainless-Steel Ladies' Watch",
+    "price": "280 each"
+  },
+  "GW-L004": {
+    "name": "Vintage Polygon Dial Bracelet Watch",
+    "price": "290"
+  },
+  "GW-L005": {
+    "name": "Rose Gold Watch & Jewellery Set",
+    "price": "450"
+  },
+  "GW-L006": {
+    "name": "Rose Gold Watch & Jewellery Set",
+    "price": "450"
+  },
+  "GW-U001": {
+    "name": "Casio W-218HC Digital Watch",
+    "price": "899"
+  },
+  "GW-U002": {
+    "name": "Digital Sports Watch Set",
+    "price": "700 for both"
+  },
+  "GW-U003": {
+    "name": "GUESS Matte Square Watch",
+    "price": "2,100"
+  },
+  "GW-U004": {
+    "name": "BINBOND Couple Watch Set",
+    "price": "900 for both"
+  },
+  "GW-U005": {
+    "name": "Elegant Couple Watch Set",
+    "price": "500"
+  },
+  "GW-U006": {
+    "name": "2.01-Inch Touchscreen Smartwatch",
+    "price": "399"
+  },
+  "GW-J001": {
+    "name": "18K Gold-Plated Leaf Bracelet",
+    "price": "400"
+  },
+  "GW-J002": {
+    "name": "Zirconia Rabbit Pendant Set",
+    "price": "225"
+  },
+  "GW-J003": {
+    "name": "Rhinestone Water Drop Jewellery Set",
+    "price": "420"
+  },
+  "GW-J004": {
+    "name": "Zirconia Tennis Bracelet",
+    "price": "600"
+  },
+  "GW-J005": {
+    "name": "Lion & Sun Pendant Necklace",
+    "price": "280"
+  },
+  "GW-J006": {
+    "name": "Zirconia Earring Set",
+    "price": "399"
+  },
+  "GW-FM001": {
+    "name": "Blue & Homme Fragrance Gift Set",
+    "price": "400"
+  },
+  "GW-FM002": {
+    "name": "Arabian Sandalwood Eau De Parfum 100ml",
+    "price": "250"
+  },
+  "GW-FM003": {
+    "name": "5-Scent Men's Cologne Gift Set",
+    "price": "200"
+  },
+  "GW-FM004": {
+    "name": "Black Intense For Men 100ml",
+    "price": "250"
+  },
+  "GW-FM005": {
+    "name": "CEO Night Eau De Parfum 100ml",
+    "price": "250"
+  },
+  "GW-FM006": {
+    "name": "Blasting Love Cologne 50ml",
+    "price": "150"
+  },
+  "GW-FM007": {
+    "name": "Angel Elves 3-Piece Gift Set",
+    "price": "600"
+  },
+  "GW-FM008": {
+    "name": "Warmkiss 4-Piece Fragrance Gift Set",
+    "price": "700"
+  },
+  "GW-FM009": {
+    "name": "24K Pure Black For Men 100ml",
+    "price": "350"
+  },
+  "GW-FW001": {
+    "name": "24K Pure Pink For Women 100ml",
+    "price": "350"
+  },
+  "GW-FW002": {
+    "name": "Dignife 3-Piece Fragrance Gift Set",
+    "price": "600"
+  },
+  "GW-FW003": {
+    "name": "Classic Eau De Toilette 100ml",
+    "price": "350"
+  },
+  "GW-FW004": {
+    "name": "Glow Vanilla Fragrance 56ml",
+    "price": "250"
+  },
+  "GW-FW005": {
+    "name": "Gazipoo Arabian Fragrance Mist 20ml",
+    "price": "150"
+  },
+  "GW-FW006": {
+    "name": "Her's Lahab Eau De Parfum 100ml",
+    "price": "400"
+  },
+  "GW-FW007": {
+    "name": "Ms. Beautiful 3-Piece Fragrance Gift Set",
+    "price": "480"
+  },
+  "GW-FW008": {
+    "name": "Warm Kiss Butterfly Fragrance 35ml",
+    "price": "250"
+  },
+  "GW-E001": {
+    "name": "Large Frame Aviator Glasses",
+    "price": "250"
+  },
+  "GW-E002": {
+    "name": "Geometric Metal Frame Glasses",
+    "price": "299"
+  },
+  "GW-E003": {
+    "name": "Metal Spring Punk Glasses",
+    "price": "199"
+  },
+  "GW-E004": {
+    "name": "Retro Punk Hollow Square Glasses",
+    "price": "250"
+  },
+  "GW-E005": {
+    "name": "Polygon Thick Frame Glasses",
+    "price": "350"
+  },
+  "GW-E006": {
+    "name": "Transparent Tea Large Frame Glasses",
+    "price": "300"
+  },
+  "GW-E007": {
+    "name": "SI YANG Metal Square Frame Glasses",
+    "price": "320"
+  },
+  "GW-E008": {
+    "name": "Cat Eye Retro Glasses (Black)",
+    "price": "199"
+  },
+  "GW-E009": {
+    "name": "Cat Eye Retro Glasses (Tortoise)",
+    "price": "199"
+  },
+  "GW-E010": {
+    "name": "Chain-Leg Double Bridge Aviator Glasses",
+    "price": "150"
+  },
+  "GW-E011": {
+    "name": "Rimless Polygon Y2K Glasses",
+    "price": "250"
+  },
+  "GW-E012": {
+    "name": "Oversized Fashion Glasses",
+    "price": "280"
+  },
+  "GW-E013": {
+    "name": "Classic Aviator Frame Glasses",
+    "price": "200"
+  },
+  "GW-E014": {
+    "name": "Foldable Women's Glasses",
+    "price": "150"
+  }
+}

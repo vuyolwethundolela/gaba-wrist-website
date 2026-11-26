@@ -1,0 +1,7 @@
+# Both functions are called by browsers / PayFast without a Supabase login,
+# so JWT verification is off. They protect themselves (see the code).
+[functions.create-payment]
+verify_jwt = false
+
+[functions.payfast-notify]
+verify_jwt = false

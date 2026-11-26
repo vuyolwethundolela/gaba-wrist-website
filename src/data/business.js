@@ -68,8 +68,8 @@ export function getOrderTotalText(products) {
   let total = 0
   for (const product of products) {
     const priceText = getProductPriceText(product)
-    if (!priceText || !/^[\d,]+$/.test(priceText)) return null
-    total += Number(priceText.replace(/,/g, ''))
+    if (!priceText || !/^[\d,]+(\s+for both)?$/i.test(priceText)) return null
+    total += Number(priceText.replace(/\s+for both$/i, '').replace(/,/g, ''))
   }
   return formatRand(total)
 }

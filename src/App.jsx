@@ -19,6 +19,7 @@ import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Admin from './pages/Admin.jsx'
 import NotFound from './pages/NotFound.jsx'
+import PaymentResult from './pages/PaymentResult.jsx'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -45,6 +46,8 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/payment/success" element={<PaymentResult success />} />
+            <Route path="/payment/cancelled" element={<PaymentResult />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
