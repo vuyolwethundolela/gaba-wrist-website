@@ -91,7 +91,7 @@ export default function ProductGrid({ products, onView }) {
               onClick={openSelectedEnquiry}
               className="btn-gold w-full text-center text-xs sm:w-auto"
             >
-              Order on WhatsApp
+              Go To Checkout
             </button>
           </div>
         </div>
