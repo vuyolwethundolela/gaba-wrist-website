@@ -8,7 +8,7 @@ export const business = {
   name: 'Gaba Wrist',
   tagline: 'LUXURY STYLE WITHIN REACH',
   owner: 'Sibusiso Sebini',
-  email: 'Sibusisosebini17@gmail.com',
+  email: 'gababusinessholding@gmail.com',
   // Raw number as supplied by the owner (South African local format)
   whatsappDisplay: '068 410 1972',
   // International format, digits only, required for the wa.me deep link
