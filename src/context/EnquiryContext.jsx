@@ -32,9 +32,10 @@ export function EnquiryProvider({ children }) {
     setEnquiry({ type: 'product', products })
   }
 
-  const openSelectedEnquiry = () =>
+  // mode: 'checkout' (pay online, WhatsApp as backup) or 'whatsapp' (WhatsApp order only)
+  const openSelectedEnquiry = (mode = 'checkout') =>
     selectedProducts.length &&
-    setEnquiry({ type: 'product', products: selectedProducts })
+    setEnquiry({ type: 'product', mode, products: selectedProducts })
 
   const openGeneralEnquiry = () => setEnquiry({ type: 'general' })
 
