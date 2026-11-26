@@ -87,6 +87,8 @@ file needs to change.
 
 
 
+
+
 - The WhatsApp number used throughout the site is Gaba Wrist's number,
   `0684101972` (South Africa), stored in international format in
   `src/data/business.js`.
