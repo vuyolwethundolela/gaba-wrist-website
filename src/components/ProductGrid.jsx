@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard.jsx'
 import { useEnquiry } from '../context/EnquiryContext.jsx'
-import { buildProductEmailHref } from '../data/business.js'
 
 export default function ProductGrid({ products, onView }) {
   const {
@@ -79,19 +78,20 @@ export default function ProductGrid({ products, onView }) {
           </div>
 
           <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:justify-end">
-            <a
-              href={buildProductEmailHref(selectedProducts)}
+            <button
+              type="button"
+              onClick={() => openSelectedEnquiry('whatsapp')}
               className="btn-outline w-full text-center text-xs sm:w-auto"
             >
-              Email cart
-            </a>
+              Order on WhatsApp
+            </button>
 
             <button
               type="button"
-              onClick={openSelectedEnquiry}
+              onClick={() => openSelectedEnquiry('checkout')}
               className="btn-gold w-full text-center text-xs sm:w-auto"
             >
-              Go To Checkout
+              Go to Checkout
             </button>
           </div>
         </div>
