@@ -22,8 +22,39 @@ import j3 from '../../j3.jpeg'
 import j4 from '../../j4.jpeg'
 import j5 from '../../j5.jpeg'
 import j6 from '../../j6.jpeg'
+import fm1 from '../assets/images/fm1.jpg'
+import fm2 from '../assets/images/fm2.jpg'
+import fm3 from '../assets/images/fm3.jpg'
+import fm4 from '../assets/images/fm4.jpg'
+import fm5 from '../assets/images/fm5.jpg'
+import fm6 from '../assets/images/fm6.jpg'
+import fm7 from '../assets/images/fm7.jpg'
+import fm8 from '../assets/images/fm8.jpg'
+import fm9 from '../assets/images/fm9.jpg'
+import fw1 from '../assets/images/fw1.jpg'
+import fw2 from '../assets/images/fw2.jpg'
+import fw3 from '../assets/images/fw3.jpg'
+import fw4 from '../assets/images/fw4.jpg'
+import fw5 from '../assets/images/fw5.jpg'
+import fw6 from '../assets/images/fw6.jpg'
+import fw7 from '../assets/images/fw7.jpg'
+import fw8 from '../assets/images/fw8.jpg'
+import e1 from '../assets/images/e1.jpg'
+import e2 from '../assets/images/e2.jpg'
+import e3 from '../assets/images/e3.jpg'
+import e4 from '../assets/images/e4.jpg'
+import e5 from '../assets/images/e5.jpg'
+import e6 from '../assets/images/e6.jpg'
+import e7 from '../assets/images/e7.jpg'
+import e8 from '../assets/images/e8.jpg'
+import e9 from '../assets/images/e9.jpg'
+import e10 from '../assets/images/e10.jpg'
+import e11 from '../assets/images/e11.jpg'
+import e12 from '../assets/images/e12.jpg'
+import e13 from '../assets/images/e13.jpg'
+import e14 from '../assets/images/e14.jpg'
 
-export const CATEGORIES = { MENS: "Men's Watches", LADIES: "Ladies' Watches", UNISEX: 'Unisex Watches', JEWELLERY: 'Jewellery' }
+export const CATEGORIES = { MENS: "Men's Watches", LADIES: "Ladies' Watches", UNISEX: 'Unisex Watches', JEWELLERY: 'Jewellery', EYEWEAR: 'Eyewear', FRAGRANCE_MEN: "Men's Fragrance", FRAGRANCE_WOMEN: "Women's Fragrance" }
 const product = (id, name, category, description, price, image) => ({ id, reference: id, name, category, description: `${description} Price: R${price}.`, image })
 
 export const products = [
@@ -51,6 +82,37 @@ export const products = [
   product('GW-J004', 'Zirconia Tennis Bracelet', CATEGORIES.JEWELLERY, 'A durable pure-copper tennis bracelet with glittering synthetic zirconia. Its versatile unisex hip-hop style makes a standout luxury accessory.', '600', j4),
   product('GW-J005', 'Lion & Sun Pendant Necklace', CATEGORIES.JEWELLERY, 'A vintage-inspired stainless-steel pendant necklace featuring a bold lion and sun motif in a gold-and-silver-tone finish.', '280', j5),
   product('GW-J006', 'Zirconia Earring Set', CATEGORIES.JEWELLERY, 'A versatile set of stainless-steel cross and teardrop zirconia stud earrings, designed for comfortable low-allergy wear and effortless gifting.', '399', j6),
+  product("GW-FM001", "Blue & Homme Fragrance Gift Set", CATEGORIES.FRAGRANCE_MEN, "2pcs Flameless Fragrance Gift Set, Home Flameless Fragrance, Blending Floral And Fruit Scents, Bringing Long-Lasting Fresh Fragrance To The Air, This High-End Luxury Fragrance Product Has Long-Lasting Scent Function, Affordable Alternative To Luxury Flameless Fragrance Liquid | Long-Lasting Scent | Suitable For Bedroom, Wardrobe, Car, Home, Hotel, Office And Other Places.", "400", fm1),
+  product("GW-FM002", "Arabian Sandalwood Eau De Parfum 100ml", CATEGORIES.FRAGRANCE_MEN, "Arabian Sandalwood Men's Eau De Parfum, Oriental Woody Scent, Long-Lasting Masculine Fragrance Spray For Daily & Dating, 100ML/3.4FL OZ.", "250", fm2),
+  product("GW-FM003", "5-Scent Men's Cologne Gift Set", CATEGORIES.FRAGRANCE_MEN, "5pcs/Set, 10ml Men's Cologne Fragrance Spray, Gift Box Packaging, Limited Edition Indoor/Outdoor Dual-Use Fragrance Spray, Multi-Layered Pleasant Scent, Long-Lasting Natural Fresh And Charming Aroma, Suitable For Dating, Party, Gathering, Travel, Vacation, Home, Hotel, Office And Other Multiple Scenarios, Ideal Gift For Family And Friends.", "200", fm3),
+  product("GW-FM004", "Black Intense For Men 100ml", CATEGORIES.FRAGRANCE_MEN, "Men's Perfume, 100ml Spray, Designer Fragrance, Rich And Long-Lasting Scent. Perfect For Gifting, Dating And Daily Wear.", "250", fm4),
+  product("GW-FM005", "CEO Night Eau De Parfum 100ml", CATEGORIES.FRAGRANCE_MEN, "100ml 3.4FL.Oz CEO Men's Fragrance Spray Perfume, Strong Fragrance, Lasting Fragrance, Cologne Fragrance, Wooden Tone, A Must For Dating And Work, Gift For Boyfriend, Boy Attraction, Magic Tool.", "250", fm5),
+  product("GW-FM006", "Blasting Love Cologne 50ml", CATEGORIES.FRAGRANCE_MEN, "FLATPEA 1 Bottle Men's Cologne Spray, Alcohol-Free, 50ml/1.7oz, Ocean Citrus Lavender Fragrance, Long-Lasting Scent, Suitable For Casual Daily Wear, Perfect For Morning Jog, Cafe Hangout, Weekend Cycling And More.", "150", fm6),
+  product("GW-FM007", "Angel Elves 3-Piece Gift Set", CATEGORIES.FRAGRANCE_MEN, "3pcs/Set Aromatherapy Gift Box Set, Floral And Fruity Scented Diffuser, 50ml*3 Per Bottle, Portable Aromatherapy Gift Box Suitable For Daily Use On Fabrics, Clothes, Pants, Skirts, Portable Aromatherapy Liquid, Can Be Used For Home Decor, Pillows, Wardrobes, Luggage, Handbags To Freshen Air, Perfect Gift Choice.", "600", fm7),
+  product("GW-FM008", "Warmkiss 4-Piece Fragrance Gift Set", CATEGORIES.FRAGRANCE_MEN, "4pcs Flameless Fragrance Gift Set. Fragrance Spray In Exquisite Gift Box. Four Long-Lasting Premium Fragrance Products With Deodorizing And Scent-Enhancing Functions. Very Suitable For Indoor Deodorizing And Scenting, Applicable To Fabrics, Clothes, Pants, Skirts And Other Daily Necessities. Portable Air Freshener. Can Be Used For Home Decor, Pillows, Wardrobes, Bags And More To Add Fragrance.", "700", fm8),
+  product("GW-FM009", "24K Pure Black For Men 100ml", CATEGORIES.FRAGRANCE_MEN, "100ml 3.4FL OZ Men's Fragrance Spray – A Long-Lasting, Invigorating Scent For Men, Perfect For Dates And Everyday Wear. An Ideal Gift For Friends And Boyfriends.", "350", fm9),
+  product("GW-FW001", "24K Pure Pink For Women 100ml", CATEGORIES.FRAGRANCE_WOMEN, "100ml 3.4FL OZ 24k Gold Perfume Charming Flower And Fruit Eau De Toilette - A Long-Lasting, Multi-Functional Female Perfume, Very Suitable For Dating And Daily Wear. The Ideal Gift For Friends And Girlfriends.", "350", fw1),
+  product("GW-FW002", "Dignife 3-Piece Fragrance Gift Set", CATEGORIES.FRAGRANCE_WOMEN, "3pcs/Set 30ML Fragrance Gift Set, Mixed Floral & Fruity Scents, Air Freshener, Holiday Gift For Friends.", "600", fw2),
+  product("GW-FW003", "Classic Eau De Toilette 100ml", CATEGORIES.FRAGRANCE_WOMEN, "100ml Perfume, Long-Lasting Fragrance, Blending Floral And Mandarin Scents, Showcasing Feminine Softness, Charm And Confidence, Suitable For Daily Work, Business And Entertainment Occasions.", "350", fw3),
+  product("GW-FW004", "Glow Vanilla Fragrance 56ml", CATEGORIES.FRAGRANCE_WOMEN, "Arabian Glow Vanilla Fragrance 56ml, Luxury Middle Eastern Fragrance Spray, Warm Sweet Vanilla Oriental Scent, Long-Lasting Intense Fragrance, Elegant Unisex Fragrance Gift.", "250", fw4),
+  product("GW-FW005", "Gazipoo Arabian Fragrance Mist 20ml", CATEGORIES.FRAGRANCE_WOMEN, "20ml - Dubai Arabian Style Elegant Women's Floral Fragrance Spray, Featuring Floral Scents, Plant-Based Arabian Fragrance, Long-Lasting Aroma, Ideal Gift For Girlfriend, Daughter, Wife And Friends (Valentine's Day/Anniversary).", "150", fw5),
+  product("GW-FW006", "Her's Lahab Eau De Parfum 100ml", CATEGORIES.FRAGRANCE_WOMEN, "1pc 100ml Gold Crown Flameless Aroma Diffuser Liquid, Luxury Fragrance Alternative, Portable Home Fragrance Releasing Fresh Natural Floral And Fruity Notes, Gentle And Delicate Without Irritation, Suitable For Indoor, Outdoor, Cinema, Office And Other Daily Use To Remove Odors And Add Fragrance, With Fresh Air, Refreshing And Relaxing, Fatigue Relief Effects, Perfect Gift Choice.", "400", fw6),
+  product("GW-FW007", "Ms. Beautiful 3-Piece Fragrance Gift Set", CATEGORIES.FRAGRANCE_WOMEN, "1 Set 3x30ml/Set Creamy Dessert Fragrance Women's Fragrance Gift Set, Combining Creamy And Dessert Scents, Long-Lasting Fragrance, Can Be Applied To Wrists, Behind Ears And Neck, Aromatherapy Essential Oil, Makes The Air Fresher, Has Refreshing And Relaxing Functions, Essential For Daily Outings, This Fragrance Gift Set Is Perfect For Personal Use Or As A Gift.", "480", fw7),
+  product("GW-FW008", "Warm Kiss Butterfly Fragrance 35ml", CATEGORIES.FRAGRANCE_WOMEN, "1pc 35ml Cute Butterfly Fragrance, Women's Fragrance, Premium Flameless Aromatherapy Liquid, 8 Niche Scents To Choose From, Portable Fragrance, Releases Fresh Natural Floral And Fruity Notes, Multiple Fragrances, Natural Long-Lasting Subtle Scent, Suitable For Wrists, Behind Ears And Neck, Elegant Feminine Charm, Gentle And Non-Irritating, Creates Home Atmosphere, Freshens Air, Soothes Emotions, Relieves Fatigue, Refreshing, Suitable For Dates, Gatherings And Other Occasions, Women's Gift.", "250", fw8),
+  product("GW-E001", "Large Frame Aviator Glasses", CATEGORIES.EYEWEAR, "1pc Large Frame Aviator Style New Fashion Glasses For Men, Retro Personalized Men's Glasses, Men's Driving Glasses, Outdoor Travel Holiday Beach Accessory Unisex Basic.", "250", e1),
+  product("GW-E002", "Geometric Metal Frame Glasses", CATEGORIES.EYEWEAR, "1 Pair Unisex Metal Geometric Frame Small/Medium Size Casual Fashionable Fashion Glasses Festival Shades For Summer Beach Vacation,Outdoor,Travel.", "299", e2),
+  product("GW-E003", "Metal Spring Punk Glasses", CATEGORIES.EYEWEAR, "1 Pair Fashion New Metal Spring Punk Style Oversized Fashion Glasses, Suitable For Outdoor Travel & Beach For Men And Women.", "199", e3),
+  product("GW-E004", "Retro Punk Hollow Square Glasses", CATEGORIES.EYEWEAR, "1 Pair Unisex Retro Punk Metal Hollow Square Frame Fashion Glasses.", "250", e4),
+  product("GW-E005", "Polygon Thick Frame Glasses", CATEGORIES.EYEWEAR, "1PC Men's Polygon Multi-Color Thick Frame Square Casual Retro Autumn/Winter Premium, Personalized Street Style Temple Decor Daily Commute Vacation Driving Handsome Cool Fashion Glasses Shades, Suitable For Street Photography, Travel, Dating, Beach, Etc.", "350", e5),
+  product("GW-E006", "Transparent Tea Large Frame Glasses", CATEGORIES.EYEWEAR, "1 Pair Men's Transparent Tea Color Large Frame One-Piece Lens Personalized Outdoor Street Style Travel Vacation Fashion Glasses.", "300", e6),
+  product("GW-E007", "SI YANG Metal Square Frame Glasses", CATEGORIES.EYEWEAR, "SY SI YANG Brand 1 Pair Men's And Women's Metal Casual Square Frame Personalized Fashion Glasses, Side Wing Decoration, Travel Walking Shopping Item, Suitable For Photography, Outfit, Driving, Outdoor Glasses.", "320", e7),
+  product("GW-E008", "Cat Eye Retro Glasses (Black)", CATEGORIES.EYEWEAR, "1PC Personalized Cat Eye Retro Women's Fashion Glasses, Avant-Garde Narrow Frame Cat Eye Women's Glasses, Outdoor Travel Vacation Beach Accessory, Summer Vacation Glasses, Women's Driving Glasses.", "199", e8),
+  product("GW-E009", "Cat Eye Retro Glasses (Tortoise)", CATEGORIES.EYEWEAR, "1PC Personalized Cat Eye Retro Women's Fashion Glasses, Avant-Garde Narrow Frame Cat Eye Women's Glasses, Outdoor Travel Vacation Beach Accessory, Summer Vacation Glasses, Women's Driving Glasses.", "199", e9),
+  product("GW-E010", "Chain-Leg Double Bridge Aviator Glasses", CATEGORIES.EYEWEAR, "1pc Women's Metal Double Bridge Classic Aviator, Chain Leg Fashion Retro Punk Geometric Bohemian Y2K Street Neutral Shades Fashion Glasses, Suitable For Travel, Dating, Driving, Beach.", "150", e10),
+  product("GW-E011", "Rimless Polygon Y2K Glasses", CATEGORIES.EYEWEAR, "1 Pair Rimless Polygon Y2K Fashion Glasses, Suitable For Party Photography And Daily Wear, Comfortable Fit, Photography Props And Accessories, Durable Eyewear.", "250", e11),
+  product("GW-E012", "Oversized Fashion Glasses", CATEGORIES.EYEWEAR, "Fashion Glasses For Women, European And American Style Personalized Oversized Fashion Glasses, Outdoor Travel Street Style Beach Accessories.", "280", e12),
+  product("GW-E013", "Classic Aviator Frame Glasses", CATEGORIES.EYEWEAR, "1pc Summer New Fashion Glasses Classic Aviator Frame Decorative Glasses Unisex, Y2K Personalized Retro Bohemian Metallic Cat Eye Ins Style Glasses High-End Street Style Decorative Glasses Daily Decoration, Street Photography Daily Commute. Casual Vacation, Beach, Party, Best Choice For Student Gift.", "200", e13),
+  product("GW-E014", "Foldable Women's Glasses", CATEGORIES.EYEWEAR, "Foldable Women Eyewear.", "150", e14),
 ]
 
 export const getProductByReference = (reference) => products.find((p) => p.reference === reference)

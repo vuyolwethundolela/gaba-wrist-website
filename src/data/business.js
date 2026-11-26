@@ -50,44 +50,72 @@ export function buildProductEmailHref(products) {
 }
 
 /**
- * Constructs the full, structured WhatsApp enquiry message for a product.
- * The complete product description (which already contains the price) is
- * included exactly as stored in the product data — never shortened, and the
- * customer is never asked about pricing anywhere in this message.
+ * Reads the price text (e.g. "699", "1,250", "700 for both") out of a product
+ * description that ends with "Price: R....".
+ */
+export function getProductPriceText(product) {
+  const match = product.description.match(/Price:\s*R(.+?)\.\s*$/i)
+  return match ? match[1].trim() : null
+}
+
+const formatRand = (amount) => `R${String(amount).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
+
+/**
+ * Adds up the prices of the selected items. Returns null when any price is
+ * not a plain number (for example "700 for both"), so no wrong total is shown.
+ */
+export function getOrderTotalText(products) {
+  let total = 0
+  for (const product of products) {
+    const priceText = getProductPriceText(product)
+    if (!priceText || !/^[\d,]+$/.test(priceText)) return null
+    total += Number(priceText.replace(/,/g, ''))
+  }
+  return formatRand(total)
+}
+
+/**
+ * Builds the WhatsApp order message for the cart. Online payment is not live
+ * yet, so the payment status is stated as not yet paid.
  *
- * @param {object} product - { name, reference, category, description }
- * @param {object} customer - { name, area, fulfillment: 'collect'|'deliver', message }
+ * @param {object[]} products - items in the cart
+ * @param {object} customer - { name, mobile, area, address, fulfillment: 'collect'|'deliver', message }
  */
 export function buildProductEnquiryMessage(products, customer) {
+  const plural = products.length > 1
+  const total = getOrderTotalText(products)
   const fulfillmentLine =
     customer.fulfillment === 'collect'
-      ? 'I will collect the item.'
-      : 'I would like the item delivered.'
+      ? `I will collect the item${plural ? 's' : ''}.`
+      : `I would like the item${plural ? 's' : ''} delivered.`
 
   const lines = [
     `Hello ${business.name},`,
     '',
-    `I would like to enquire about the following item${products.length > 1 ? 's' : ''}:`,
+    `I would like to order the following item${plural ? 's' : ''}:`,
     '',
-    ...products.flatMap((product, index) => [
-      `Product ${index + 1}: ${product.name}`,
-      `Reference: ${product.reference}`,
-      `Category: ${product.category}`,
-      'Description:',
-      product.description,
-      '',
-    ]),
+    ...products.map((product, index) => {
+      const price = getProductPriceText(product)
+      return `${index + 1}. ${product.name} (${product.reference})${price ? ` - R${price}` : ''}`
+    }),
     '',
-    'Customer Details:',
+    `Total: ${total || 'to be confirmed'}`,
+    'Payment status: Not yet paid',
+    '',
+    'Customer details:',
     `Name: ${customer.name}`,
-    `Residential Area: ${customer.area}`,
-    '',
-    'Collection / Delivery:',
-    fulfillmentLine,
+    `Mobile number: ${customer.mobile}`,
+    `Residential area: ${customer.area}`,
   ]
 
+  if (customer.fulfillment === 'deliver' && customer.address && customer.address.trim()) {
+    lines.push(`Delivery address: ${customer.address.trim()}`)
+  }
+
+  lines.push('', 'Collection / Delivery:', fulfillmentLine)
+
   if (customer.message && customer.message.trim().length > 0) {
-    lines.push('', 'Additional Message:', customer.message.trim())
+    lines.push('', 'Additional message:', customer.message.trim())
   }
 
   lines.push('', 'Thank you.')
